@@ -18,7 +18,7 @@ def main(global_config, **settings):
 
 
     authn_policy = AuthTktAuthenticationPolicy(
-        'sosecret', callback=groupfinder, hashalg='sha512')
+        'secret', callback=groupfinder, hashalg='sha512')
     authz_policy = ACLAuthorizationPolicy()
     
     config = Configurator(settings=settings, root_factory='myproject.mymodel.Access')
@@ -28,7 +28,7 @@ def main(global_config, **settings):
     
     config.include('pyramid_jinja2')
     config.add_static_view('static', 'static')
-	config.add_route('index', '/index')
+    config.add_route('index', '/index')
     config.add_route('book', '/book')
     config.add_route('film', '/film')
     config.add_route('history', '/history')
