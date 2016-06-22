@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta> charset="utf-8" </meta>
+    <title>My project</title>
+	
+	<link href="{{request.static_url('myproject:static/css/normalize.css')}}" rel="stylesheet">
+	<link href="{{request.static_url('myproject:static/css/allsettings.css')}}" rel="stylesheet">
+	
+
+</head>
+<body>
+
+
+{% if username=="admin" %}  
+    <label >{{username}}</label>
+    <a style="float: right;" href="logout">Sign out</a>
+    
+{% else %}
+    <a style="float: right;" href="login">Sign in</a>
+{% endif %}
+
+	<header >
+		<img src="{{request.static_url('myproject:static/mainIm.jpg')}}">
+		<ul>
+		    <li class="selected"><a href="index">Главная</a></li>
+		    <li><a href="bookPage">Книги</a></li>
+		    <li><a href="storyPage">Статьи</a></li>
+		    <li><a href="filmPage">Фильмы</a></li>   
+		</ul>
+	</header>
+
+	<div class="content">	 
+			<div>
+				<h1>My project</h1>
+				<p>Сайт для тех кому нравится жанр фэнтези, как в произведениях, так и в других направлениях.  </p>
+			</div>						
+	</div>
+
+</body>
+</html>

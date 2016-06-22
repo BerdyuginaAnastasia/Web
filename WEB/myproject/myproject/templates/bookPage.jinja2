@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+
+	<title>My project</title>
+	<link href="{{request.static_url('myproject:static/css/normalize.css')}}" rel="stylesheet">
+        <link href="{{request.static_url('myproject:static/css/allsettings.css')}}" rel="stylesheet">
+
+	
+</head>
+<body>
+
+
+{% if username=="admin" %}  
+    <label >{{username}}</label>
+    <a style="float: right;" href="logout">Sign out</a>
+    
+{% else %}
+    <a style="float: right;" href="login">Sign in</a>
+{% endif %}
+
+		<header >
+		<img src="{{request.static_url('myproject:static/image/mainIm.jpg')}}">
+		<ul>
+		    <li><a href="index">Главная</a></li>
+		    <li><a href="bookPage" class="selected">Книги</a></li>
+		    <li><a href="storyPage">Статьи</a></li>
+		    <li><a href="filmPage">Фильмы</a></li>
+		</ul>
+	</header>
+
+	<div>
+		<div class="rightMenu"> 
+			<ul>
+			    <li><a href="#collection">Подборки</a></li>
+			    <li><a href="#popylar">Популярное</a></li>
+			    <li><a href="#news">Новинки</a></li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="leftContent"> 
+				<div>
+					<h1 id="collection">Подборки</h1>
+					<p>Здесь представлены различные подборки на различную тематику.</p>
+
+				</div>
+			</div>			
+				
+				<div class="leftContent"> 
+				<div>
+					<h1 id="popylar">Популярное</h1>
+					<p>Здесь представлены популярные книги по мнению пользователей! </p>
+
+				</div>
+			</div>
+				
+
+			<div class="rightContent"> 
+				<div>
+					<h1 id="news">Новинки</h1>
+					<p>Здесь представлен новый контент!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
